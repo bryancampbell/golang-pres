@@ -2,7 +2,7 @@
 
 ## Features
 
-GoLang has many built in frameworks for making sure your code is bugfree.
+GoLang has many built in frameworks for making sure your code is bug-free.
 
 * Testing
 * Benchmarking
