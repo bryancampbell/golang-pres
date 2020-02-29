@@ -130,3 +130,7 @@ The example is displayed in godoc alongside the thing it demonstrates:
 
 The benchmark package will vary b.N until the benchmark function lasts long enough to be timed reliably.
 
+## Other Tools
+
+* vet: checks code for common programmer mistakes
+* pprof: CPU and memory profiling
