@@ -13,8 +13,10 @@ GoLang has many built in frameworks for making sure your code is bug-free.
 
 ## Testing
 
+Create a new file at ../test/index_test.go
+
 ```
-package index_test
+package index
 
 import (
     "strings"
@@ -61,3 +63,69 @@ To run the tests for all my projects:
 ```
 $ go test github.com/bryancampbell/...
 ```
+
+## Benchmarking
+
+Create a new file at ../test/index_bench_test.go
+
+```
+package index
+
+import (
+	"strings"
+	"testing"
+)
+
+func BenchmarkIndexTest(b *testing.B) {
+	const s = "some_text=somenvalue"
+	for i := 0; i < b.N; i++ {
+		strings.Index(s, "v")
+	}
+}
+```
+
+The benchmark package will vary b.N until the benchmark function lasts long enough to be timed reliably.
+
+```
+$ go test -test.bench=Index
+goos: darwin
+goarch: amd64
+BenchmarkIndexTest-8   	215134378	         5.59 ns/op
+PASS
+```
+
+## Document Examples
+
+Create a new file at ../test/index_example_test.go
+
+```
+package index
+
+import (
+    "fmt"
+    "strings"
+)
+
+func ExampleIndex() {
+    fmt.Println(strings.Index("chicken", "ken"))
+    fmt.Println(strings.Index("chicken", "dmr"))
+    // Output:
+    // 4
+    // -1
+}
+```
+
+Examples and built and run as part of the normal test suite:
+
+```
+$ go test -v
+=== RUN: ExampleIndex
+--- PASS: ExampleIndex (0.00 seconds)
+PASS
+```
+
+The example is displayed in godoc alongside the thing it demonstrates:
+
+golang.org/pkg/strings/#Index
+The benchmark package will vary b.N until the benchmark function lasts long enough to be timed reliably.
+
