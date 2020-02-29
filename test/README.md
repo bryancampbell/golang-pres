@@ -126,7 +126,7 @@ PASS
 
 The example is displayed in godoc alongside the thing it demonstrates:
 
-golang.org/pkg/strings/#Index
+[golang.org/pkg/strings/#Index](golang.org/pkg/strings/#Index)
 
 The benchmark package will vary b.N until the benchmark function lasts long enough to be timed reliably.
 
